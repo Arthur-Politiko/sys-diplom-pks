@@ -1,0 +1,65 @@
+zabbix_export:
+  version: '7.0'
+  host_groups:
+    - uuid: b7f2f946cd0145478874690c671aaf34
+      name: all_hosts
+    - uuid: 6f6799aa69e844b4b3918f779f2abf08
+      name: 'Zabbix servers'
+  hosts:
+    - host: bastion
+      name: bastion
+      templates:
+        - name: 'Linux by Zabbix agent'
+      groups:
+        - name: all_hosts
+      interfaces:
+        - useip: 'NO'
+          dns: bastion.ru-central1.internal
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: elastic
+      name: elastic
+      templates:
+        - name: 'Linux by Zabbix agent'
+      groups:
+        - name: all_hosts
+      interfaces:
+        - useip: 'NO'
+          dns: elastic.ru-central.internal
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: web-a
+      name: web-a
+      templates:
+        - name: 'Linux by Zabbix agent'
+      groups:
+        - name: all_hosts
+      interfaces:
+        - useip: 'NO'
+          dns: web-a.ru-central1.internal
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: web-b
+      name: web-b
+      templates:
+        - name: 'Linux by Zabbix agent'
+      groups:
+        - name: all_hosts
+      interfaces:
+        - useip: 'NO'
+          dns: web-b.ru-central1.internal
+          interface_ref: if1
+      inventory_mode: DISABLED
+    - host: 'Zabbix server'
+      name: 'Zabbix server'
+      templates:
+        - name: 'Linux by Zabbix agent'
+        - name: 'Zabbix server health'
+      groups:
+        - name: 'Zabbix servers'
+      interfaces:
+        - interface_ref: if1
+      inventory:
+        location_lat: '56.95387'
+        location_lon: '24.22067'
+      inventory_mode: AUTOMATIC

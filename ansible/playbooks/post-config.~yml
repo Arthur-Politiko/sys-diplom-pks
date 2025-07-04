@@ -1,0 +1,23 @@
+---
+- name: Configure Zabbix Server
+  hosts: zabbix
+  become: yes
+  vars_files:
+    - "../group_vars/all/main.yml"
+  
+  #when: zabbix_config_enabled | default(true)  # Перенесено после tasks
+
+  tasks:
+    - name: Import Zabbix hosts configuration
+      uri:
+        url: "http://127.0.0.1/api_jsonrpc.php"
+        method: POST
+        body: "{{ lookup('file', 'zabbix-templates/zbx_export_hosts.yaml') | from_yaml | to_json }}"
+      register: import_result
+
+    - name: Create USE dashboard
+      uri:
+        url: "http://127.0.0.1/api_jsonrpc.php"
+        method: POST
+        body: "{{ lookup('file', 'zabbix-templates/use_dashboard.json') }}"
+      when: import_result is changed

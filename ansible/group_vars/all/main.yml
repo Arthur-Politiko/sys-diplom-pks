@@ -1,0 +1,62 @@
+
+# Настройки Zabbix
+zabbix_version: "7.0"
+zabbix_db_name: "zabbix"
+zabbix_db_user: "zabbix"
+zabbix_db_password: "zabbix"  # TODO: Переделать на vault или другой secure storage
+zabbix_server: "zabbix.example.com"
+
+# Настройки PHP
+php_fpm_socket: "/var/run/php/php8.1-fpm.sock"
+
+# Настройка zabbix сервера
+zabbix_api_token: ""
+use_thresholds:
+  cpu_warning: 80
+  cpu_critical: 95
+  mem_warning: 85
+  mem_critical: 95
+
+zabbix_config_enabled: true
+
+# Адреса ресурсов
+zabbix_server_ip: [33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mNo outputs found[0m
+[33m│[0m [0m
+[33m│[0m [0m[0mThe state file either has no outputs defined, or all the defined outputs are empty. Please define an output
+[33m│[0m [0min your configuration with the `output` keyword and run `terraform refresh` for it to become available. If
+[33m│[0m [0myou are using interpolation, please verify the interpolated value is not empty. You can use the `terraform
+[33m│[0m [0mconsole` command to assist.
+[33m╵[0m[0m.ru-central1.internal
+bastion_ip: [33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mNo outputs found[0m
+[33m│[0m [0m
+[33m│[0m [0m[0mThe state file either has no outputs defined, or all the defined outputs are empty. Please define an output
+[33m│[0m [0min your configuration with the `output` keyword and run `terraform refresh` for it to become available. If
+[33m│[0m [0myou are using interpolation, please verify the interpolated value is not empty. You can use the `terraform
+[33m│[0m [0mconsole` command to assist.
+[33m╵[0m[0m.ru-central1.internal
+weba_ip: [33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mNo outputs found[0m
+[33m│[0m [0m
+[33m│[0m [0m[0mThe state file either has no outputs defined, or all the defined outputs are empty. Please define an output
+[33m│[0m [0min your configuration with the `output` keyword and run `terraform refresh` for it to become available. If
+[33m│[0m [0myou are using interpolation, please verify the interpolated value is not empty. You can use the `terraform
+[33m│[0m [0mconsole` command to assist.
+[33m╵[0m[0m.ru-central1.internal
+webb_ip: [33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mNo outputs found[0m
+[33m│[0m [0m
+[33m│[0m [0m[0mThe state file either has no outputs defined, or all the defined outputs are empty. Please define an output
+[33m│[0m [0min your configuration with the `output` keyword and run `terraform refresh` for it to become available. If
+[33m│[0m [0myou are using interpolation, please verify the interpolated value is not empty. You can use the `terraform
+[33m│[0m [0mconsole` command to assist.
+[33m╵[0m[0m.ru-central1.internal
+elastic_ip: [33m╷[0m[0m
+[33m│[0m [0m[1m[33mWarning: [0m[0m[1mNo outputs found[0m
+[33m│[0m [0m
+[33m│[0m [0m[0mThe state file either has no outputs defined, or all the defined outputs are empty. Please define an output
+[33m│[0m [0min your configuration with the `output` keyword and run `terraform refresh` for it to become available. If
+[33m│[0m [0myou are using interpolation, please verify the interpolated value is not empty. You can use the `terraform
+[33m│[0m [0mconsole` command to assist.
+[33m╵[0m[0m.ru-central.internal

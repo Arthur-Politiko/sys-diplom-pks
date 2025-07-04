@@ -1,0 +1,6 @@
+---
+- name: Deploy Zabbix Server
+  import_playbook: zabbix-server.yml
+
+# - name: Post Configuration
+#   import_playbook: post-config.yml
